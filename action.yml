@@ -1,0 +1,12 @@
+name: SSM Params to Github
+author: Sam Anthony
+
+runs:
+  using: "composite"
+  steps:
+  - name: Import SSM Params
+    shell: bash
+    run: |
+      cd scripts
+      composer install
+      php run.php $GITHUB_OUTPUT
