@@ -1,6 +1,12 @@
 name: SSM Params to Github
 author: Sam Anthony
 
+inputs:
+#  env-name:
+#    required: true
+  dontenv-file-path:
+    required: true
+
 runs:
   using: "composite"
   steps:
@@ -10,4 +16,4 @@ runs:
       ls -la
       cd ${{ github.action_path }}/scripts
       composer install
-      php run.php $GITHUB_OUTPUT
+      php run.php > ${{ dontenv-file-path }}

@@ -36,7 +36,7 @@ class ShellVarHelperTest extends TestCase
         );
     }
 
-    public function testAppendArrayToDotenvFile()
+    public function testArrayToDotenvString()
     {
         $this->doesNotPerformAssertions();
 
@@ -44,11 +44,17 @@ class ShellVarHelperTest extends TestCase
 
         $tempFilePath = $this->getTempFilePath();
 
+        print PHP_EOL . 'Temp file path:';
+        print PHP_EOL . $tempFilePath;
+        print PHP_EOL;
+
         $arr = [
             'VAR1' => 'Value 1',
             'VAR_WITH_QUOTE' => 'My Value with "'
         ];
 
-        $helper->appendArrayToDotenvFile($arr, $tempFilePath);
+        $dotenvString = $helper->arrayToDotenvString($arr);
+
+        dd($dotenvString);
     }
 }

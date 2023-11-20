@@ -40,15 +40,17 @@ class ShellVarHelper
         return '"'. $value . '"';
     }
 
-    public function appendArrayToDotenvFile(array $arr, string $dotenvFilePath): void
+    public function arrayToDotenvString(array $arr): string
     {
+        $lines = [];
         foreach ($arr as $key => $value) {
             if (! $this->isVarNameValid($key) ) {
                 throw new \Exception('"' . $key . '" is not a valid variable name');
             }
 
-            $line = $key . '=' . $this->escapeVarValue($value) . "\n";
-            file_put_contents($dotenvFilePath, $line, FILE_APPEND);
+            $lines[] = $key . '=' . $this->escapeVarValue($value) . "\n";
         }
+
+        return join('', $lines);
     }
 }
