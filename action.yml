@@ -7,6 +7,7 @@ runs:
   - name: Import SSM Params
     shell: bash
     run: |
+      ls -la
       cd scripts
       composer install
       php run.php $GITHUB_OUTPUT
