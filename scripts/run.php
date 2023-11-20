@@ -18,6 +18,8 @@ function syncSsmParamsToGithubVars(string $envName): void
         $envName,
     );
 
+    print (count($vars) . ' SSM Params found');
+    print ('GITHUB_OUTPUT: ' . GITHUB_OUTPUT);
     $shellVarHelper = new \App\ShellVarHelper();
     $shellVarHelper->appendArrayToDotenvFile($vars, GITHUB_OUTPUT);
 }
