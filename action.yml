@@ -8,6 +8,6 @@ runs:
     shell: bash
     run: |
       ls -la
-      cd scripts
+      cd ${{ github.action_path }}/scripts
       composer install
       php run.php $GITHUB_OUTPUT
