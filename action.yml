@@ -16,4 +16,4 @@ runs:
       ls -la
       cd ${{ github.action_path }}/scripts
       composer install
-      php run.php > ${{ dontenv-file-path }}
+      php run.php > ${{ inputs.dotenv-file-path }}
