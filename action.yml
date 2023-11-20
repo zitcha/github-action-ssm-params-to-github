@@ -4,7 +4,7 @@ author: Sam Anthony
 inputs:
 #  env-name:
 #    required: true
-  dontenv-file-path:
+  dotenv-file-path:
     required: true
 
 runs:
