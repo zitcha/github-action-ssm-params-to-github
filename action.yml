@@ -18,5 +18,4 @@ runs:
       composer install
       echo "dotenv-file-path:"
       echo ${{ inputs.dotenv-file-path }}
-      echo "Generated Dotenv contents:"
-      php run.php | tee ${{ inputs.dotenv-file-path }}
+      php run.php > ${{ inputs.dotenv-file-path }}
