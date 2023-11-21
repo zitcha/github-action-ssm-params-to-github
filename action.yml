@@ -4,18 +4,25 @@ author: Sam Anthony
 inputs:
 #  env-name:
 #    required: true
-  dotenv-file-path:
+  dotenv-path:
     required: true
 
 runs:
   using: "composite"
   steps:
-  - name: Import SSM Params
+  - name: Dump SSM Params into temp dotenv file
     shell: bash
     # TODO-SAM composer caching?
     run: |
       cd ${{ github.action_path }}/scripts
       composer install
-      echo "dotenv-file-path:"
-      echo ${{ inputs.dotenv-file-path }}
-      php run.php > ${{ inputs.dotenv-file-path }}
+      echo "dotenv-path:"
+      echo ${{ inputs.dotenv-path }}
+      mkdir -p ${{ inputs.dotenv-path }}
+      php run.php > ${{ inputs.dotenv-path }}/.env
+
+  - name: Load dotenv file
+    uses: xom9ikk/dotenv@v2
+    with:
+      path: ${{ inputs.dotenv-path }}
+
