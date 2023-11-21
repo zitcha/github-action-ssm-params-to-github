@@ -12,10 +12,11 @@ runs:
   steps:
   - name: Import SSM Params
     shell: bash
+    # TODO-SAM composer caching?
     run: |
-      ls -la
       cd ${{ github.action_path }}/scripts
       composer install
       echo "dotenv-file-path:"
       echo ${{ inputs.dotenv-file-path }}
-      php run.php > ${{ inputs.dotenv-file-path }}
+      echo "Generated Dotenv contents:"
+      php run.php | tee ${{ inputs.dotenv-file-path }}
