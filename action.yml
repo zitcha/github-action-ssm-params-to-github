@@ -14,7 +14,7 @@ runs:
   - name: PHP Composer for github-action-php-composer-cached
     uses: the-pistol/github-action-php-composer-cached@master
     with:
-      composer-working-dir: ${{ github.action_path }}/scripts
+      composer-working-dir: ./scripts
 
   - name: Dump SSM Params into temp dotenv file
     shell: bash
