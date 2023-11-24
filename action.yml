@@ -1,6 +1,7 @@
 name: SSM Params to Github
 author: Sam Anthony
 
+# TODO-SAM since the dotevn file is never needed outside of this action, I dont think it is senesible to pass the dotenv-path anymore
 inputs:
 #  env-name:
 #    required: true
@@ -12,7 +13,7 @@ runs:
   steps:
 
   - name: PHP Composer for github-action-php-composer-cached
-    uses: the-pistol/github-action-php-composer-cached@master
+    uses: the-pistol/github-action-php-composer-cached@alternative-implementation
     with:
       composer-working-dir: ${{ github.action_path }}/scripts
 
