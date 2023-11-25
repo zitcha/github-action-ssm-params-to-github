@@ -16,7 +16,7 @@ runs:
   - name: PHP Composer for github-action-php-composer-cached
     uses: the-pistol/github-action-php-composer-cached@alternative-implementation
     with:
-      GITHUB_TOKEN: ${{ input.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
       composer-working-dir: ${{ github.action_path }}/scripts
       dev-option: "exclude-dev"
 
