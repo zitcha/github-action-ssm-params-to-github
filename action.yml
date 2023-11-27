@@ -2,6 +2,8 @@ name: SSM Params to Github
 author: Sam Anthony
 
 inputs:
+  env-name:
+    required: true
   GITHUB_TOKEN:
     description: Pass in the GITHUB_TOKEN
     required: true
@@ -11,8 +13,7 @@ runs:
   steps:
 
   - name: PHP Composer for github-action-php-composer-cached
-    # TODO-SAM use master github branch here
-    uses: the-pistol/github-action-php-composer-cached@alternative-implementation
+    uses: the-pistol/github-action-php-composer-cached@master
     with:
       GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
       composer-working-dir: ${{ github.action_path }}/scripts
@@ -29,7 +30,7 @@ runs:
       echo "$DOTENV_FOLDER/.env"
       mkdir -p $DOTENV_FOLDER
       echo "folder=$DOTENV_FOLDER" >> "$GITHUB_OUTPUT"
-      php run.php > "$DOTENV_FOLDER/.env"
+      php run.php "${{ inputs.env-name }}" > "$DOTENV_FOLDER/.env"
       cat "$DOTENV_FOLDER/.env"
 
   - name: Load dotenv file

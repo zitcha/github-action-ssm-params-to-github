@@ -2,13 +2,14 @@
 
 require 'vendor/autoload.php';
 
-//if ($argc !== 2) {
-//    throw new \Exception('You must pass exactly 1 argument, typically the value of GITHUB_OUTPUT from the Github Action');
-//}
-//
-//define('GITHUB_OUTPUT', $argv[1]);
+if ($argc !== 2) {
+    throw new \Exception('You must pass exactly 1 argument which should be the "env name"');
+}
 
-$envName = 'bt01'; // TODO-SAM param hard coded.
+$envName = $argv[1];
+if (strlen($envName) < 3) {
+    throw new \Exception('"env name" string length seems too short');
+}
 
 $ssmGh = new App\SsmParamStoreToGitHubVars(new \App\SsmParamHelper());
 
