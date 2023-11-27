@@ -8,7 +8,7 @@ require 'vendor/autoload.php';
 //
 //define('GITHUB_OUTPUT', $argv[1]);
 
-$envName = 'experiment-01'; // TODO-SAM param hard coded.
+$envName = 'bt01'; // TODO-SAM param hard coded.
 
 $ssmGh = new App\SsmParamStoreToGitHubVars(new \App\SsmParamHelper());
 
