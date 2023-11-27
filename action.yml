@@ -30,6 +30,7 @@ runs:
       mkdir -p $DOTENV_FOLDER
       echo "folder=$DOTENV_FOLDER" >> "$GITHUB_OUTPUT"
       php run.php > "$DOTENV_FOLDER/.env"
+      cat "$DOTENV_FOLDER/.env"
 
   - name: Load dotenv file
     uses: xom9ikk/dotenv@v2
