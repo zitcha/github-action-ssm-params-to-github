@@ -21,7 +21,7 @@ class SsmParamHelper
         // $provider = CredentialProvider::sso('zitcha');
 
         $args = [
-            'region' => 'ap-southeast-2', // SDK didn't seem to get the region from the environmental var automatically
+//            'region' => 'ap-southeast-2', // SDK didn't seem to get the region from the environmental var automatically
             'version' => '2014-11-06',
 //            'credentials' => $provider
         ];

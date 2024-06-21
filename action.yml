@@ -23,6 +23,9 @@ runs:
     id: dotenv
     shell: bash
     run: |
+      echo ""
+      env
+      echo ""
       cd ${{ github.action_path }}/scripts
       DOTENV_FOLDER="${{ runner.temp }}/$RANDOM"
       echo "DOTENV_FOLDER:"
