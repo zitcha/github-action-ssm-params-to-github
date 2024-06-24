@@ -10,7 +10,7 @@ class SsmParamHelper
     private $ssmClient;
 
     public function __construct() {
-        $this->ssmClient = $this->getSsmClient(); // TODO-SAM
+        $this->ssmClient = $this->getSsmClient();
     }
 
     protected function getSsmClient(): SsmClient
