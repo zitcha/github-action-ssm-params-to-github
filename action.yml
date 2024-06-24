@@ -23,7 +23,7 @@ runs:
     id: dotenv
     shell: bash
     run: |
-      echo ""
+      echo "Dump env vars:"
       env
       echo ""
       cd ${{ github.action_path }}/scripts
