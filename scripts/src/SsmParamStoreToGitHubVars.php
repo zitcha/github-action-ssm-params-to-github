@@ -39,16 +39,8 @@ class SsmParamStoreToGitHubVars
 
         // "Org Level" params
         $keyedParams = $this->getKeyedParamsByGroup(InfraLevel::Org, $orgName);
-        $uniName = 'uni';
         foreach ($keyedParams as $key => $value) {
             $key = $this->ssmParamNameToGitHubVarName('O_' . $key);
-            $gitHubVars[$key] = $value;
-        }
-
-        // "Uni Level" params
-        $keyedParams = $this->getKeyedParamsByGroup(InfraLevel::Uni, $uniName);
-        foreach ($keyedParams as $key => $value) {
-            $key = $this->ssmParamNameToGitHubVarName('U_' . $key);
             $gitHubVars[$key] = $value;
         }
 
