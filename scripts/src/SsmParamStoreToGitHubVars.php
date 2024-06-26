@@ -6,10 +6,10 @@ use Aws\Credentials\CredentialProvider;
 
 class SsmParamStoreToGitHubVars
 {
-    protected SsmParamHelper $ssmParamHelper;
+    protected AbstractSsmParamHelper $ssmParamHelper;
 
     public function __construct(
-        SsmParamHelper $ssmParamHelper
+        AbstractSsmParamHelper $ssmParamHelper
     ) {
         $this->ssmParamHelper = $ssmParamHelper;
     }

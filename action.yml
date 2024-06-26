@@ -33,7 +33,7 @@ runs:
       echo "$DOTENV_FOLDER/.env"
       mkdir -p $DOTENV_FOLDER
       echo "folder=$DOTENV_FOLDER" >> "$GITHUB_OUTPUT"
-      php run.php "${{ inputs.env-name }}" > "$DOTENV_FOLDER/.env"
+      php run-github.php "${{ inputs.env-name }}" > "$DOTENV_FOLDER/.env"
       cat "$DOTENV_FOLDER/.env"
 
   - name: Load dotenv file
