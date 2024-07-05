@@ -3,7 +3,7 @@
 namespace Tests;
 
 use App\GitHubHelper;
-use App\SsmParamHelper;
+use App\AbstractSsmParamHelper;
 use App\SsmParamStoreToGitHubVars;
 use PHPUnit\Framework\TestCase;
 
@@ -16,7 +16,7 @@ class SsmParamHelperTest extends TestCase
     {
 //        $this->markTestSkipped();
 
-        $helper = new SsmParamHelper();
+        $helper = new AbstractSsmParamHelper();
 
         $actual = $this->invokePrivateMethod(
             $helper,

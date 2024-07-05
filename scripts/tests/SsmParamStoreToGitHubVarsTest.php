@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\SsmParamHelper;
+use App\AbstractSsmParamHelper;
 use App\SsmParamStoreToGitHubVars;
 use App\InfraLevel;
 use PHPUnit\Framework\TestCase;
@@ -14,7 +14,7 @@ class SsmParamStoreToGitHubVarsTest extends TestCase
     protected function getSsmParamStoreToGitHubVarsService(): SsmParamStoreToGitHubVars
     {
         return new SsmParamStoreToGitHubVars(
-            new SsmParamHelper()
+            new AbstractSsmParamHelper()
         );
     }
 
