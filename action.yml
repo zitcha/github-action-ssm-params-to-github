@@ -13,7 +13,7 @@ runs:
   steps:
 
   - name: PHP Composer for github-action-php-composer-cached
-    uses: the-pistol/github-action-php-composer-cached@v1.0.0
+    uses: zitcha/github-action-php-composer-cached@v1.0.0
     with:
       GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
       composer-working-dir: ${{ github.action_path }}/scripts
