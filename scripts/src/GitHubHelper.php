@@ -17,7 +17,7 @@ class GitHubHelper
     public function __construct(
         protected string $token, // e.g. '*********************iFgyjurcKhuMG1ximVT'
         protected string $organization, // e.g. 'the-pistol' or 'zitcha'
-        protected string $repository // e.g. 'herd-backend'
+        protected string $repository // e.g. 'backend'
     ) {
         $this->client = $this->getClient();
         $this->repositoryData = $this->getRepositoryData();
